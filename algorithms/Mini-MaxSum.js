@@ -9,18 +9,13 @@ const arr = [1,3,5,7,9]
 const miniMaxSum = (arr) => {
    let allSums = []
 
-   const add = (acc, a) => {
-      return acc + a
-   }
-
    for (let i = 0; i < arr.length; i++) {
       const newArr = [].concat(arr)
       newArr.splice(i, 1)
-      // console.log(newArr)
-      allSums = [...allSums, newArr.reduce(add, 0)]
+
+      allSums = [...allSums, newArr.reduce((acc, a) => acc + a, 0)]
    }
 
-   // console.log(allSums)
    console.log(Math.min(...allSums), Math.max(...allSums))
 }
 
