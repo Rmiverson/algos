@@ -82,6 +82,13 @@ class LinkedList {
         }
         console.log(list)
     }
+
+    delete(data) {
+        let toDelete = this.find(data)
+        toDelete.bPointer.fPointer = toDelete.fPointer
+        toDelete.fPointer.bPointer = toDelete.bPointer
+        toDelete = null
+    }
 }
 
 let lolList = new LinkedList
