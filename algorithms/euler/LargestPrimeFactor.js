@@ -3,8 +3,10 @@
 
 let num = 600851475143
 
+
 const factorize = (n) => {
     let count = 0
+    let primes = []
 
     while ((n % 2) === 0) {
         n = parseInt(n / 2)
@@ -12,7 +14,11 @@ const factorize = (n) => {
     }
 
     if (count > 0) {
-        console.log(2, count)
+        // console.log(2, count)
+
+        for (let y = 0; y < count; y++) {
+            primes.push(2)
+        }
     }
 
     for (let i = 3; i <= parseInt(Math.sqrt(n)); i += 2) {
@@ -22,13 +28,20 @@ const factorize = (n) => {
             n = parseInt(n / i)
         }
         if (count != 0) {
-            console.log(i, count)
+            // console.log(i, count)
+            for (let y = 0; y < count; y++) {
+                primes.push(i)
+            }
         }
     }
 
     if (n > 2) {
-        console.log(n, 1)
+        // console.log(n, 1)
+        primes.push(n)
     }
+    // console.log(primes)
+    return primes
 }
+
 
 factorize(13195)
